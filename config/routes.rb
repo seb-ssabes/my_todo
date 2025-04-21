@@ -1,31 +1,11 @@
 Rails.application.routes.draw do
-  get 'sections/index'
-  get 'sections/show'
-  get 'sections/new'
-  get 'sections/create'
-  get 'sections/edit'
-  get 'sections/update'
-  get 'sections/destroy'
-  get 'projects/index'
-  get 'projects/show'
-  get 'projects/new'
-  get 'projects/create'
-  get 'projects/edit'
-  get 'projects/update'
-  get 'projects/destroy'
-  get 'tasks/index'
-  get 'tasks/show'
-  get 'tasks/new'
-  get 'tasks/create'
-  get 'tasks/edit'
-  get 'tasks/update'
-  get 'tasks/destroy'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root "home#index"
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  resources :tasks, only: [:create, :update, :destroy]
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  resources :projects, only: [:index, :create, :update, :destroy] do
+    resources :sections, only: [:create, :update, :destroy] do
+      resources :tasks, only: [:create, :update, :destroy]
+    end
+  end
 end
