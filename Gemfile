@@ -68,4 +68,4 @@ end
 
 gem "tailwindcss-rails"
 
-
+gem "font-awesome-sass", "~> 6.5", ">= 6.5.2"
