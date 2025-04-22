@@ -9,7 +9,22 @@
         <li class="flex items-center justify-between gap-2 py-2 border-b border-gray-300">
           <%= form_with model: task, url: task_path(task), method: :patch, local: true, class: "flex-grow" do |f| %>
           <div class="flex w-full">
-            <%= f.check_box :status, { checked: task.status == "done", onchange: "this.form.submit()" }, "done", "pending" %>
+            <div class="inline-flex items-center">
+              <label class="relative flex items-center rounded-full cursor-pointer">
+                <%= f.check_box :status,
+                      { checked: task.status == "done",
+                        onchange: "this.form.submit()",
+                        class: "peer relative h-6 w-9 appearance-none rounded-xl border border-gray-400 transition-all checked:border-gray-500 checked:bg-gray-500 checked:before:opacity-0" },
+                      "done", "pending" %>
+
+                <div class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414L9 11.586l6.293-6.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </label>
+            </div>
+
             <div class="flex flex-col ml-2 w-full"
                  data-action="click->trash-icon#showIcon"
                  data-trash-icon-target="task">
