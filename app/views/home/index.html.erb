@@ -1,15 +1,18 @@
 <div class="flex flex-col">
-  <h1 class="text-3xl font-bold text-gray-600 mb-5">Today</h1>
-  <i class="fa-solid fa-trash"></i>
+  <h1 class="text-4xl font-bold text-gray-600 mb-6">Today</h1>
 
   <div class="mb-5">
     <ul>
       <% @tasks.each do |task| %>
-        <li>
-          <%= task.title %>
-          <%= button_to "Mark Done", task_path(task), method: :patch, params: { task: { status: "done" } } %>
-          <%= link_to "Edit", "#TODO" %>
-          <%= button_to "Delete", task_path(task), method: :delete %>
+        <li class="flex items-center gap-2 mb-2">
+          <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
+            <%= f.check_box :status, { checked: task.status == "done", onchange: "this.form.submit()" }, "done", "pending" %>
+            <%= f.label task.title, class: task.status == "done" ? "line-through text-gray-500" : "" %>
+          <% end %>
+
+          <%= button_to task_path(task), method: :delete, class: "text-red-600 ml-2" do %>
+              <i class="fa-solid fa-trash"></i>
+          <% end %>
         </li>
       <% end %>
     </ul>
