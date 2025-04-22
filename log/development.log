@@ -2381,3 +2381,1192 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.1ms | Allocations: 8689)
 
 
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 11:36:16 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"done"}, "id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.3ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "done"], ["updated_at", "2025-04-22 09:36:16.444769"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms | Allocations: 2372)
+
+
+Started GET "/" for ::1 at 2025-04-22 11:36:16 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4318)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 8388)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.1ms | Allocations: 8690)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 11:36:17 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.0ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "pending"], ["updated_at", "2025-04-22 09:36:17.681424"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms | Allocations: 2384)
+
+
+Started GET "/" for ::1 at 2025-04-22 11:36:17 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 4302)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 8481)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.2ms | Allocations: 8783)
+
+
+Started GET "/" for ::1 at 2025-04-22 11:37:02 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 4299)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 8368)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.2ms | Allocations: 8670)
+
+
+Started GET "/" for ::1 at 2025-04-22 11:56:41 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1718)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1816)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 7125)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="flex flex-col">
+  <h1 class="text-4xl font-bold text-gray-600 mb-6">Today</h1>
+
+  <div class="mb-5">
+    <ul>
+      <% @tasks.each do |task| %>
+        <li class="flex items-center gap-2 mb-2">
+          <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
+          <div class="flex flex-row">
+            <%= f.check_box :status, { checked: task.status == "done", onchange: "this.form.submit()" }, "done", "pending" %>
+            <div class="flex flex-col ml-2">
+
+              <%= f.text_field :title,
+                  class: "focus:outline-none focus:border-b border-gray-400 #{"line-through text-gray-500" if task.status == "done"}"
+                  value: task.title,
+                  onchange: "this.form.submit()"
+              %>
+
+              <%= f.text_field :description,
+                  class: "focus:outline-none focus:border-b border-gray-400 text-gray-500 #{"line-through" if task.status == "done"}"
+                  value: task.description,
+                  placeholder: "No description"
+                  onchange: "this.form.submit()"
+              %>
+            </div>
+          </div>
+          <% end %>
+
+          <%= button_to task_path(task), method: :delete, class: "text-red-600 ml-2" do %>
+              <i class="fa-solid fa-trash"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <%= form_with model: @task, url: tasks_path, local: true do |f| %>
+      <%= f.text_field :title, placeholder: "Add a task..." %>
+      <%= f.text_field :description, placeholder: "Add a description" %>
+      <%= f.hidden_field :status, value: "pending" %>
+      <%= f.submit "Add" %>
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <div class="flex flex-col">
+2:      <h1 class="text-4xl font-bold text-gray-600 mb-6">Today</h1>
+3:    
+4:      <div class="mb-5">
+5:        <ul>
+6:          <% @tasks.each do |task| %>
+7:            <li class="flex items-center gap-2 mb-2">
+8:              <%= form_with model: task, url: task_path(task), method: :patch, local: true do |f| %>
+9:              <div class="flex flex-row">
+10:                <%= f.check_box :status, { checked: task.status == "done", onchange: "this.form.submit()" }, "done", "pending" %>
+11:                <div class="flex flex-col ml-2">
+12:    
+13:                  <%= f.text_field :title,
+14:                      class: "focus:outline-none focus:border-b border-gray-400 #{"line-through text-gray-500" if task.status == "done"}"
+15:                      value: task.title,
+16:                      onchange: "this.form.submit()"
+17:                  %>
+18:    
+19:                  <%= f.text_field :description,
+20:                      class: "focus:outline-none focus:border-b border-gray-400 text-gray-500 #{"line-through" if task.status == "done"}"
+21:                      value: task.description,
+22:                      placeholder: "No description"
+23:                      onchange: "this.form.submit()"
+24:                  %>
+25:                </div>
+26:              </div>
+27:              <% end %>
+28:    
+29:              <%= button_to task_path(task), method: :delete, class: "text-red-600 ml-2" do %>
+30:                  <i class="fa-solid fa-trash"></i>
+31:              <% end %>
+32:            </li>
+33:          <% end %>
+34:        </ul>
+35:      </div>
+36:    
+37:      <div>
+38:        <%= form_with model: @task, url: tasks_path, local: true do |f| %>
+39:          <%= f.text_field :title, placeholder: "Add a task..." %>
+40:          <%= f.text_field :description, placeholder: "Add a description" %>
+41:          <%= f.hidden_field :status, value: "pending" %>
+42:          <%= f.submit "Add" %>
+43:        <% end %>
+44:      </div>
+45:    </div>
+  
+app/views/home/index.html.erb:15: syntax error, unexpected ':', expecting ')'
+app/views/home/index.html.erb:21: syntax error, unexpected ':', expecting ')'
+Started GET "/" for ::1 at 2025-04-22 11:57:01 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3808)
+  Rendered layout layouts/application.html.erb (Duration: 51.3ms | Allocations: 24531)
+Completed 200 OK in 68ms (Views: 53.1ms | ActiveRecord: 3.0ms | Allocations: 30510)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 11:57:14 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Wash the dishess", "description"=>"Clean all the dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "title" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["title", "Wash the dishess"], ["updated_at", "2025-04-22 09:57:14.729184"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms | Allocations: 3193)
+
+
+Started GET "/" for ::1 at 2025-04-22 11:57:14 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3218)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 7287)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.1ms | Allocations: 7588)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 11:57:26 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Wash the dishess", "description"=>"Clean all tthe dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Clean all tthe dishes after lunch"], ["updated_at", "2025-04-22 09:57:26.411274"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms | Allocations: 2383)
+
+
+Started GET "/" for ::1 at 2025-04-22 11:57:26 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 3230)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 7409)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.1ms | Allocations: 7711)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:00:03 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3816)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 24469)
+Completed 200 OK in 54ms (Views: 41.3ms | ActiveRecord: 2.8ms | Allocations: 30426)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 12:01:25 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"done", "title"=>"Wash the dishess", "description"=>"Clean all tthe dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.1ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "done"], ["updated_at", "2025-04-22 10:01:25.895576"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms | Allocations: 3192)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:01:25 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3242)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 7378)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.1ms | Allocations: 7679)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 12:01:27 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Wash the dishess", "description"=>"Clean all tthe dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (2.6ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "pending"], ["updated_at", "2025-04-22 10:01:27.612926"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 2.9ms | Allocations: 2397)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:01:27 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 3230)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 7299)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms | Allocations: 7600)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 12:01:33 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Wash the dishess", "description"=>"Clean all the dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.1ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Clean all the dishes after lunch"], ["updated_at", "2025-04-22 10:01:33.857544"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms | Allocations: 2404)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:01:33 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3224)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 7327)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.1ms | Allocations: 7629)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:13:39 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 4203)
+  Rendered layout layouts/application.html.erb (Duration: 45.5ms | Allocations: 23669)
+Completed 200 OK in 57ms (Views: 45.6ms | ActiveRecord: 2.2ms | Allocations: 28941)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:15:01 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3833)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 24491)
+Completed 200 OK in 56ms (Views: 44.6ms | ActiveRecord: 2.6ms | Allocations: 30449)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:16:21 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 3844)
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 24554)
+Completed 200 OK in 68ms (Views: 55.1ms | ActiveRecord: 2.8ms | Allocations: 30512)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:21:13 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3850)
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 24564)
+Completed 200 OK in 51ms (Views: 40.3ms | ActiveRecord: 2.6ms | Allocations: 30522)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:21:52 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3838)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 23372)
+Completed 200 OK in 43ms (Views: 31.7ms | ActiveRecord: 3.2ms | Allocations: 29330)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:22:43 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3847)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 23382)
+Completed 200 OK in 50ms (Views: 37.5ms | ActiveRecord: 3.6ms | Allocations: 29319)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:23:39 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3818)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 23355)
+Completed 200 OK in 51ms (Views: 39.3ms | ActiveRecord: 2.7ms | Allocations: 29293)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:24:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 5870)
+  Rendered layout layouts/application.html.erb (Duration: 356.2ms | Allocations: 79775)
+Completed 200 OK in 401ms (Views: 360.9ms | ActiveRecord: 3.5ms | Allocations: 97211)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:24:25 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3855)
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 23410)
+Completed 200 OK in 58ms (Views: 44.4ms | ActiveRecord: 2.9ms | Allocations: 29454)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:24:47 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 3840)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 24569)
+Completed 200 OK in 53ms (Views: 40.6ms | ActiveRecord: 3.1ms | Allocations: 30536)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:25:50 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3827)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 23362)
+Completed 200 OK in 48ms (Views: 36.8ms | ActiveRecord: 3.5ms | Allocations: 29323)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:27:53 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 3828)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 23364)
+Completed 200 OK in 45ms (Views: 33.6ms | ActiveRecord: 3.3ms | Allocations: 29325)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 12:28:03 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Wash the dishess", "description"=>"Clean all the dishes after lunch fjdj hdsjhdk ksdh adkd"}, "id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (2.1ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Clean all the dishes after lunch fjdj hdsjhdk ksdh adkd"], ["updated_at", "2025-04-22 10:28:03.477696"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 2.8ms | Allocations: 5336)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:28:03 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3230)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7391)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.1ms | Allocations: 7695)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 12:28:14 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Wash the dishess", "description"=>"Clean all the dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.3ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "Clean all the dishes after lunch"], ["updated_at", "2025-04-22 10:28:14.307365"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 1.5ms | Allocations: 2403)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:28:14 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3251)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 7430)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.1ms | Allocations: 7732)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:29:44 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 3847)
+  Rendered layout layouts/application.html.erb (Duration: 107.5ms | Allocations: 24596)
+Completed 200 OK in 124ms (Views: 109.6ms | ActiveRecord: 3.8ms | Allocations: 30556)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:29:57 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3841)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 23463)
+Completed 200 OK in 49ms (Views: 37.5ms | ActiveRecord: 2.7ms | Allocations: 29423)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:31:48 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 3847)
+  Rendered layout layouts/application.html.erb (Duration: 35.4ms | Allocations: 23388)
+Completed 200 OK in 48ms (Views: 37.0ms | ActiveRecord: 3.1ms | Allocations: 29346)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:31:55 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 3819)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 23354)
+Completed 200 OK in 50ms (Views: 35.8ms | ActiveRecord: 4.2ms | Allocations: 29318)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:32:15 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3835)
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 24557)
+Completed 200 OK in 57ms (Views: 42.1ms | ActiveRecord: 2.8ms | Allocations: 30617)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:33:39 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 3844)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 24668)
+Completed 200 OK in 53ms (Views: 42.1ms | ActiveRecord: 2.7ms | Allocations: 30627)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:33:47 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 3862)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 24571)
+Completed 200 OK in 59ms (Views: 47.8ms | ActiveRecord: 2.7ms | Allocations: 30530)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:40:02 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 4036)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 23572)
+Completed 200 OK in 46ms (Views: 35.7ms | ActiveRecord: 2.2ms | Allocations: 28845)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:40:15 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3817)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 23351)
+Completed 200 OK in 49ms (Views: 33.9ms | ActiveRecord: 2.8ms | Allocations: 29310)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:40:33 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3826)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 24627)
+Completed 200 OK in 57ms (Views: 45.4ms | ActiveRecord: 2.8ms | Allocations: 30586)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:41:53 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3830)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 24556)
+Completed 200 OK in 54ms (Views: 43.5ms | ActiveRecord: 3.0ms | Allocations: 30514)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:41:58 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3233)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 7308)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.1ms | Allocations: 7609)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:42:40 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3855)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 23438)
+Completed 200 OK in 48ms (Views: 36.6ms | ActiveRecord: 2.8ms | Allocations: 29397)
+
+
+Started DELETE "/tasks/9" for ::1 at 2025-04-22 12:42:45 +0200
+Processing by TasksController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"9"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTask Destroy (0.8ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms | Allocations: 2743)
+
+
+Started GET "/" for ::1 at 2025-04-22 12:42:45 +0200
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2850)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 7028)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.1ms | Allocations: 7377)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:08:16 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (4.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 3658)
+  Rendered layout layouts/application.html.erb (Duration: 102.4ms | Allocations: 24452)
+Completed 200 OK in 119ms (Views: 99.2ms | ActiveRecord: 5.5ms | Allocations: 29744)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:18:04 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (2.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 3670)
+  Rendered layout layouts/application.html.erb (Duration: 130.0ms | Allocations: 60487)
+Completed 200 OK in 142ms (Views: 128.9ms | ActiveRecord: 3.1ms | Allocations: 65765)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:26:52 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3664)
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | Allocations: 27006)
+Completed 200 OK in 103ms (Views: 91.0ms | ActiveRecord: 2.2ms | Allocations: 32281)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:28:08 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3468)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 26831)
+Completed 200 OK in 60ms (Views: 48.1ms | ActiveRecord: 2.7ms | Allocations: 32793)
+
+
+Started DELETE "/tasks/8" for ::1 at 2025-04-22 13:28:16 +0200
+Processing by TasksController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"8"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTask Destroy (1.0ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:38:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms | Allocations: 2680)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:28:16 +0200
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2464)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 6659)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.1ms | Allocations: 7012)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:28:56 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2455)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 25442)
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.1ms | Allocations: 25748)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:29:44 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2461)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 25457)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.1ms | Allocations: 25762)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:30:27 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2458)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 25516)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.1ms | Allocations: 25821)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:30:55 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2455)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 25411)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.1ms | Allocations: 25717)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:32:22 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2461)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 6653)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.1ms | Allocations: 6958)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:35:05 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3056)
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 25154)
+Completed 200 OK in 59ms (Views: 45.3ms | ActiveRecord: 4.3ms | Allocations: 31116)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:37:58 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1674)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1772)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.8ms | Allocations: 7771)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="flex flex-col">
+  <h1 class="text-4xl font-bold text-gray-600 mb-6">Today</h1>
+
+  <div class="mb-5" data-controller="trash-icon">
+    <ul>
+      <% @tasks.each do |task| %>
+        <li class="flex items-center justify-between gap-2 py-2 border-b border-gray-300">
+          <%= form_with model: task, url: task_path(task), method: :patch, local: true, class: "flex-grow" do |f| %>
+          <div class="flex w-full">
+            <%= f.check_box :status, { checked: task.status == "done", onchange: "this.form.submit()" }, "done", "pending" %>
+            <div class="flex flex-col ml-2 w-full"
+                 data-action="click->trash-icon#showIcon">
+
+              <%= f.text_field :title,
+                  class: "w-full focus:outline-none focus:border-b border-gray-400 #{"line-through text-gray-500" if task.status == "done"}",
+                  value: task.title,
+                  onchange: "this.form.submit()" %>
+
+              <%= f.text_field :description,
+                  class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500 resize-none #{"line-through" if task.status == "done"}",
+                  value: task.description,
+                  placeholder: "No description",
+                  onchange: "this.form.submit()" %>
+
+            </div>
+          </div>
+          <% end %>
+
+          <div class="flex items-center justify-center"
+               >
+            <%= button_to task_path(task), method: :delete, class: "text-red-600 opacity-0"
+                data: {trash_icon_target: "icon"} do %>
+                <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div>
+    <%= form_with model: @task, url: tasks_path, local: true do |f| %>
+      <%= f.text_field :title, placeholder: "Add a task..." %>
+      <%= f.text_field :description, placeholder: "Add a description" %>
+      <%= f.hidden_field :status, value: "pending" %>
+      <%= f.submit "Add" %>
+    <% end %>
+  </div>
+</div>
+
+):
+1:    <div class="flex flex-col">
+2:      <h1 class="text-4xl font-bold text-gray-600 mb-6">Today</h1>
+3:    
+4:      <div class="mb-5" data-controller="trash-icon">
+5:        <ul>
+6:          <% @tasks.each do |task| %>
+7:            <li class="flex items-center justify-between gap-2 py-2 border-b border-gray-300">
+8:              <%= form_with model: task, url: task_path(task), method: :patch, local: true, class: "flex-grow" do |f| %>
+9:              <div class="flex w-full">
+10:                <%= f.check_box :status, { checked: task.status == "done", onchange: "this.form.submit()" }, "done", "pending" %>
+11:                <div class="flex flex-col ml-2 w-full"
+12:                     data-action="click->trash-icon#showIcon">
+13:    
+14:                  <%= f.text_field :title,
+15:                      class: "w-full focus:outline-none focus:border-b border-gray-400 #{"line-through text-gray-500" if task.status == "done"}",
+16:                      value: task.title,
+17:                      onchange: "this.form.submit()" %>
+18:    
+19:                  <%= f.text_field :description,
+20:                      class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500 resize-none #{"line-through" if task.status == "done"}",
+21:                      value: task.description,
+22:                      placeholder: "No description",
+23:                      onchange: "this.form.submit()" %>
+24:    
+25:                </div>
+26:              </div>
+27:              <% end %>
+28:    
+29:              <div class="flex items-center justify-center"
+30:                   >
+31:                <%= button_to task_path(task), method: :delete, class: "text-red-600 opacity-0"
+32:                    data: {trash_icon_target: "icon"} do %>
+33:                    <i class="fa-solid fa-trash"></i>
+34:                <% end %>
+35:              </div>
+36:            </li>
+37:          <% end %>
+38:        </ul>
+39:      </div>
+40:    
+41:      <div>
+42:        <%= form_with model: @task, url: tasks_path, local: true do |f| %>
+43:          <%= f.text_field :title, placeholder: "Add a task..." %>
+44:          <%= f.text_field :description, placeholder: "Add a description" %>
+45:          <%= f.hidden_field :status, value: "pending" %>
+46:          <%= f.submit "Add" %>
+47:        <% end %>
+48:      </div>
+49:    </div>
+  
+app/views/home/index.html.erb:32: syntax error, unexpected ':', expecting `end' or dummy end
+app/views/home/index.html.erb:37: syntax error, unexpected `end'
+Started GET "/" for ::1 at 2025-04-22 13:38:07 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3096)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 25263)
+Completed 200 OK in 54ms (Views: 43.3ms | ActiveRecord: 2.8ms | Allocations: 31223)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:39:01 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3123)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 26480)
+Completed 200 OK in 68ms (Views: 54.6ms | ActiveRecord: 3.8ms | Allocations: 32440)
+
+
+Started GET "/" for ::1 at 2025-04-22 13:48:12 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3294)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 26638)
+Completed 200 OK in 62ms (Views: 48.2ms | ActiveRecord: 2.2ms | Allocations: 31912)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:10:15 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (2.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3294)
+  Rendered layout layouts/application.html.erb (Duration: 55.5ms | Allocations: 26650)
+Completed 200 OK in 72ms (Views: 54.8ms | ActiveRecord: 2.8ms | Allocations: 31924)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:10:56 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:6
+  Rendered home/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2507)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 6702)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms | Allocations: 7007)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:13:20 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3098)
+  Rendered layout layouts/application.html.erb (Duration: 45.4ms | Allocations: 26452)
+Completed 200 OK in 64ms (Views: 47.4ms | ActiveRecord: 2.9ms | Allocations: 32420)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:15:19 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3139)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 25230)
+Completed 200 OK in 49ms (Views: 36.7ms | ActiveRecord: 3.2ms | Allocations: 31191)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:16:15 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3110)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 25200)
+Completed 200 OK in 47ms (Views: 35.4ms | ActiveRecord: 3.6ms | Allocations: 31161)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:22:00 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3345)
+  Rendered layout layouts/application.html.erb (Duration: 67.1ms | Allocations: 25490)
+Completed 200 OK in 78ms (Views: 67.5ms | ActiveRecord: 2.1ms | Allocations: 30765)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:28:11 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2785)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 6871)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 2.1ms | Allocations: 7175)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 14:28:13 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"done", "title"=>"Wash the dishess", "description"=>"Clean all the dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (2.1ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "done"], ["updated_at", "2025-04-22 12:28:13.808408"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.9ms | Allocations: 3193)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:28:13 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2532)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 6728)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.1ms | Allocations: 7032)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 14:28:15 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Wash the dishess", "description"=>"Clean all the dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.1ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "pending"], ["updated_at", "2025-04-22 12:28:15.860293"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms | Allocations: 2400)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:28:15 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2546)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 6631)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.1ms | Allocations: 6935)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 14:28:17 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"done", "title"=>"Wash the dishess", "description"=>"Clean all the dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.6ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "done"], ["updated_at", "2025-04-22 12:28:17.491225"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms | Allocations: 2386)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:28:17 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2528)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 6614)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.1ms | Allocations: 6918)
+
+
+Started PATCH "/tasks/1" for ::1 at 2025-04-22 14:28:18 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Wash the dishess", "description"=>"Clean all the dishes after lunch"}, "id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "pending"], ["updated_at", "2025-04-22 12:28:18.828342"], ["id", 1]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms | Allocations: 2401)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:28:18 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2516)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 6602)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.1ms | Allocations: 6906)
+
+
+Started PATCH "/tasks/2" for ::1 at 2025-04-22 14:28:24 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"done", "title"=>"Do the laundry", "description"=>"Wash and fold clothes"}, "id"=>"2"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (0.9ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "done"], ["updated_at", "2025-04-22 12:28:24.263238"], ["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms | Allocations: 2406)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:28:24 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2528)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 6723)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 7028)
+
+
+Started PATCH "/tasks/2" for ::1 at 2025-04-22 14:28:29 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Do the laundry", "description"=>"Wash and fold clothes"}, "id"=>"2"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTask Update (1.0ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "pending"], ["updated_at", "2025-04-22 12:28:29.127708"], ["id", 2]]
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:29:in `update'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms | Allocations: 2393)
+
+
+Started GET "/" for ::1 at 2025-04-22 14:28:29 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:8
+  Rendered home/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2537)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 6732)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 7036)
+
+
