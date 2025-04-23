@@ -30,13 +30,13 @@
                  data-trash-icon-target="task">
 
               <%= f.text_field :title,
-                  class: "w-full focus:outline-none focus:border-b border-gray-400 #{"line-through text-gray-500" if task.status == "done"}",
+                  class: "w-full truncate whitespace-nowrap overflow-hidden focus:outline-none focus:bg-gray-100 border-gray-400 #{"line-through text-gray-500" if task.status == "done"}",
                   value: task.title,
                   onchange: "this.form.submit()",
                   autocomplete: "off" %>
 
               <%= f.text_field :description,
-                  class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500 resize-none #{"line-through" if task.status == "done"}",
+                  class: "w-full truncate whitespace-nowrap break-words overflow-hidden focus:outline-none focus:bg-gray-100 border-gray-400 text-gray-500 resize-none #{"line-through" if task.status == "done"}",
                   value: task.description,
                   placeholder: "No description",
                   onchange: "this.form.submit()",
@@ -49,7 +49,7 @@
           <div class="flex items-center justify-center">
             <%= button_to task_path(task),
                   method: :delete,
-                  class: "text-red-600 opacity-0",
+                  class: "text-red-300 opacity-0",
                   data: {trash_icon_target: "icon"} do %>
                 <i class="fa-solid fa-trash"></i>
             <% end %>
