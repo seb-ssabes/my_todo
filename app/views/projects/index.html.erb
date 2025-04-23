@@ -1,2 +1,31 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<div class="flex flex-col">
+  <h1 class="text-4xl font-bold text-gray-400 mb-6">Projects</h1>
+
+  <div class="mb-5"
+       data-controller="trash-icon"
+       data-action="click@window->trash-icon#hideAllIcons">
+  </div>
+
+  <div>
+    <%= form_with model: @task, url: tasks_path, local: true do |f| %>
+      <%= f.text_field :title,
+            placeholder: "Add a task...",
+            autocomplete: "off",
+            class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+      <%= f.text_field :description,
+            placeholder: "Add a description",
+            autocomplete: "off",
+            class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+      <%= f.hidden_field :status, value: "pending" %>
+      <button type="submit" class="">
+        <i class="fa-solid fa-plus border-gray-400 text-white bg-gray-400 p-3 rounded-2xl text-xl "></i>
+      </button>
+    <% end %>
+  </div>
+
+  <footer class="fixed bottom-0 left-0 w-full py-4 z-50">
+    <div class="flex justify-center">
+      <%= link_to "Today", root_path, class:"bg-gray-200 px-4 py-2 rounded" %>
+    </div>
+  </footer>
+</div>
