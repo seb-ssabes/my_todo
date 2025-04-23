@@ -1,5 +1,5 @@
 <div class="flex flex-col">
-  <h1 class="text-4xl font-bold text-gray-600 mb-6">Today</h1>
+  <h1 class="text-4xl font-bold text-gray-400 mb-6">Today</h1>
 
   <div class="mb-5"
        data-controller="trash-icon"
@@ -14,7 +14,7 @@
                 <%= f.check_box :status,
                       { checked: task.status == "done",
                         onchange: "this.form.submit()",
-                        class: "peer relative h-6 w-9 appearance-none rounded-xl border border-gray-400 transition-all checked:border-gray-500 checked:bg-gray-500 checked:before:opacity-0" },
+                        class: "peer relative h-6 w-9 appearance-none rounded-xl border border-gray-400 transition-all checked:border-gray-400 checked:bg-gray-400 checked:before:opacity-0" },
                       "done", "pending" %>
 
                 <div class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
@@ -49,7 +49,7 @@
           <div class="flex items-center justify-center">
             <%= button_to task_path(task),
                   method: :delete,
-                  class: "text-red-300 opacity-0",
+                  class: "text-red-300 opacity-0 m-3",
                   data: {trash_icon_target: "icon"} do %>
                 <i class="fa-solid fa-trash"></i>
             <% end %>
@@ -70,7 +70,9 @@
             autocomplete: "off",
             class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
       <%= f.hidden_field :status, value: "pending" %>
-      <%= f.submit "Add" %>
+      <button type="submit" class="">
+        <i class="fa-solid fa-plus border-gray-400 text-white bg-gray-400 p-3 rounded-2xl text-xl "></i>
+      </button>
     <% end %>
   </div>
 </div>
