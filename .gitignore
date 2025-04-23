@@ -42,3 +42,4 @@ yarn-debug.log*
 .yarn-integrity
 
 /config/credentials/development.key
+app/assets/builds/tailwind.css
