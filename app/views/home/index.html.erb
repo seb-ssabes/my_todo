@@ -59,26 +59,35 @@
     </ul>
   </div>
 
-  <div>
-    <%= form_with model: @task, url: tasks_path, local: true do |f| %>
+  <footer class="fixed bottom-0 left-0 w-full py-4 z-50">
+    <div class="flex justify-between items-center">
+      <div class="w-1/3 flex justify-start"></div>
+      <div class="w-1/3 flex justify-center">
+        <%= link_to "Projects", projects_path, class:"bg-gray-200 rounded py-1 px-3" %>
+      </div>
+      <div class="w-1/3 flex justify-end">
+        <button type="button" class="mr-4" data-action="click->new-task#toggleForm">
+          <i class="fa-solid fa-plus border-gray-400 text-white bg-gray-400 p-3 rounded-2xl text-3xl"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="">
+  <%= form_with model: @task, url: tasks_path, local: true do |f| %>
+    <div data-new-task-target="newTaskForm"
+          class="fixed bottom-25 right-0 w-80 transform translate-x-full transition-transform duration-500 ease-in-out">
       <%= f.text_field :title,
-            placeholder: "Add a task",
+            placeholder: "Task",
             autocomplete: "off",
             class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
       <%= f.text_field :description,
-            placeholder: "Add a description",
+            placeholder: "Description",
             autocomplete: "off",
             class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
       <%= f.hidden_field :status, value: "pending" %>
-      <button type="submit" class="">
-        <i class="fa-solid fa-plus border-gray-400 text-white bg-gray-400 p-3 rounded-2xl text-xl "></i>
-      </button>
-    <% end %>
-  </div>
-
-  <footer class="fixed bottom-0 left-0 w-full py-4 z-50">
-    <div class="flex justify-center">
-      <%= link_to "Projects", projects_path, class:"bg-gray-200 px-4 py-2 rounded" %>
+      <%= f.submit "ADD" %>
     </div>
-  </footer>
+  <% end %>
 </div>
