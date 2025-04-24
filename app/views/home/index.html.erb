@@ -1,3 +1,8 @@
+<div id="overlay"
+     class="fixed inset-0 bg-black/10 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-all duration-300"
+     data-new-task-target="overlay">
+</div>
+
 <div class="flex flex-col">
   <h1 class="text-4xl font-bold text-gray-400 mb-6">Today</h1>
 
@@ -80,7 +85,7 @@
 <div class="">
   <%= form_with model: @task, url: tasks_path, local: true do |f| %>
     <div data-new-task-target="newTaskForm"
-          class="fixed bottom-25 right-0 w-80 transform translate-x-full transition-transform duration-500 ease-in-out">
+          class="fixed z-50 bottom-25 right-0 w-80 transform translate-x-full transition-transform duration-500 ease-in-out">
       <%= f.text_field :title,
             placeholder: "Task",
             autocomplete: "off",

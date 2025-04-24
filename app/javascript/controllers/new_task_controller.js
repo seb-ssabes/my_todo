@@ -2,10 +2,14 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="new-task"
 export default class extends Controller {
-  static targets = ["newTaskForm", "addIcon"]
+  static targets = ["newTaskForm", "addIcon", "overlay"]
 
   toggleForm() {
+    this.newTaskFormTarget.classList.toggle("translate-x-full")
+    this.newTaskFormTarget.classList.toggle("translate-x-0")
+
     const addIcon = this.addIconTarget.classList
+
     addIcon.add("opacity-0")
 
     setTimeout(() => {
@@ -19,7 +23,7 @@ export default class extends Controller {
       addIcon.remove("opacity-0")
     }, 150);
 
-    this.newTaskFormTarget.classList.toggle("translate-x-full")
-    this.newTaskFormTarget.classList.toggle("translate-x-0")
+    this.overlayTarget.classList.toggle("opacity-0");
+    this.overlayTarget.classList.toggle("pointer-events-none")
   }
 }

@@ -8118,3 +8118,124 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 67ms (Views: 56.6ms | ActiveRecord: 2.7ms | Allocations: 36631)
 
 
+Started GET "/" for ::1 at 2025-04-24 16:31:25 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (1.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3795)
+  Rendered layout layouts/application.html.erb (Duration: 59.8ms | Allocations: 30845)
+Completed 200 OK in 70ms (Views: 59.7ms | ActiveRecord: 2.2ms | Allocations: 36124)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:32:19 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3609)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 29513)
+Completed 200 OK in 58ms (Views: 45.2ms | ActiveRecord: 3.9ms | Allocations: 35478)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:32:41 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3588)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 28242)
+Completed 200 OK in 51ms (Views: 38.2ms | ActiveRecord: 2.7ms | Allocations: 34208)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:33:01 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3609)
+  Rendered layout layouts/application.html.erb (Duration: 45.5ms | Allocations: 29442)
+Completed 200 OK in 59ms (Views: 47.4ms | ActiveRecord: 3.0ms | Allocations: 35408)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:33:14 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3596)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 28251)
+Completed 200 OK in 49ms (Views: 38.0ms | ActiveRecord: 2.6ms | Allocations: 34217)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:35:43 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 3613)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 28267)
+Completed 200 OK in 50ms (Views: 36.8ms | ActiveRecord: 3.1ms | Allocations: 34233)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:35:48 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2922)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7131)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 7440)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:36:30 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3606)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 28350)
+Completed 200 OK in 52ms (Views: 40.0ms | ActiveRecord: 4.8ms | Allocations: 34316)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:36:57 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3609)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 28263)
+Completed 200 OK in 47ms (Views: 35.9ms | ActiveRecord: 2.7ms | Allocations: 34229)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:37:01 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2919)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 7112)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.1ms | Allocations: 7420)
+
+
+Started GET "/" for ::1 at 2025-04-24 16:39:23 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:13
+  Rendered home/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3599)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 28253)
+Completed 200 OK in 51ms (Views: 39.5ms | ActiveRecord: 3.1ms | Allocations: 34219)
+
+
