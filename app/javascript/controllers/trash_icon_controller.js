@@ -9,18 +9,20 @@ export default class extends Controller {
   }
 
   showIcon(e) {
+    console.log("show one icon")
     e.stopPropagation()
 
-    this.iconTargets.forEach((icon) => icon.classList.add("opacity-0"))
+    this.iconTargets.forEach((icon) => icon.classList.add("invisible"))
 
     const clickedTask = e.currentTarget
 
     const icon = clickedTask.closest("li").querySelector("[data-trash-icon-target='icon']")
 
-    if (icon) icon.classList.remove("opacity-0")
+    if (icon) icon.classList.remove("invisible")
   }
 
   hideAllIcons() {
-    this.iconTargets.forEach((icon) => icon.classList.add("opacity-0"))
+    console.log("hide all icons")
+    this.iconTargets.forEach((icon) => icon.classList.add("invisible"))
   }
 }

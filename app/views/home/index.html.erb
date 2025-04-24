@@ -49,7 +49,7 @@
           <div class="flex items-center justify-center">
             <%= button_to task_path(task),
                   method: :delete,
-                  class: "text-red-300 opacity-0 m-3",
+                  class: "text-red-300 invisible m-3",
                   data: {trash_icon_target: "icon"} do %>
                 <i class="fa-solid fa-trash"></i>
             <% end %>
@@ -62,7 +62,7 @@
   <div>
     <%= form_with model: @task, url: tasks_path, local: true do |f| %>
       <%= f.text_field :title,
-            placeholder: "Add a task...",
+            placeholder: "Add a task",
             autocomplete: "off",
             class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
       <%= f.text_field :description,
