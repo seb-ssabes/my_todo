@@ -12,11 +12,12 @@ class SectionsController < ApplicationController
   end
 
   def create
-    @section = Section.new(section_params)
+    @project = Project.find(params[:project_id])
+    @section = @project.sections.build(section_params)
     if @section.save
-      redirect_to @section, notice: "Section created"
+      redirect_to project_path(@project), notice: "Section created"
     else
-      render :new
+      render "projects/show", status: :unprocessable_entity
     end
   end
 
@@ -42,6 +43,6 @@ class SectionsController < ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:title, :project_id)
+    params.require(:section).permit(:title)
   end
 end

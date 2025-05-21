@@ -1,0 +1,46 @@
+<div class="flex flex-col">
+  <h1 class="text-4xl font-bold text-gray-400 mb-2 flex justify-center"><%= @project.title %></h1>
+  <p class="flex justify-center"><%= @project.description %></p>
+</div>
+
+<div class="mb-5">
+  <ul>
+    <% @sections.each do |section| %>
+        <li class="flex items-center justify-between gap-2 py-2 border-b border-gray-300">
+          <div class="flex w-full">
+            <h3 class="text-2xl"><%= section.title %></h3>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= form_with model: [@project, @section], local: true do |f| %>
+    <%= f.text_field :title,
+          placeholder: "Add a Section",
+          autocomplete: "off",
+          class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+    <%= f.submit "ADD" %>
+  <% end %>
+</div>
+<div>
+  <%= form_with model: @task, local: true do |f| %>
+    <%= f.text_field :title,
+          placeholder: "Add a task",
+          autocomplete: "off",
+          class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+    <%= f.text_field :description,
+          placeholder: "Add a description",
+          autocomplete: "off",
+          class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+    <%= f.submit "ADD" %>
+  <% end %>
+</div>
+
+
+<footer class="fixed bottom-0 left-0 w-full py-4 z-50">
+  <div class="flex justify-center">
+    <%= link_to "BACK", projects_path, class:"bg-gray-200 px-4 py-2 rounded" %>
+  </div>
+</footer>
