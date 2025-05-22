@@ -10013,3 +10013,846 @@ Processing by ProjectsController#show as TURBO_STREAM
 Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.2ms | Allocations: 6028)
 
 
+Started GET "/" for ::1 at 2025-05-22 12:15:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:12
+  Rendered home/index.html.erb within layouts/application (Duration: 26.4ms | Allocations: 6369)
+  Rendered layout layouts/application.html.erb (Duration: 510.7ms | Allocations: 89708)
+Completed 200 OK in 575ms (Views: 517.0ms | ActiveRecord: 2.8ms | Allocations: 107151)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 12:15:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects" for ::1 at 2025-05-22 12:16:05 +0200
+Processing by ProjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1411)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 5633)
+Completed 200 OK in 45ms (Views: 20.4ms | ActiveRecord: 0.9ms | Allocations: 9595)
+
+
+Started GET "/" for ::1 at 2025-05-22 12:16:08 +0200
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."project_id" IS NULL AND "tasks"."section_id" IS NULL[0m
+  ↳ app/views/home/index.html.erb:12
+  Rendered home/index.html.erb within layouts/application (Duration: 31.0ms | Allocations: 3740)
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 7841)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.1ms | Allocations: 8159)
+
+
+Started GET "/projects" for ::1 at 2025-05-22 12:16:31 +0200
+Processing by ProjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 933)
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 5034)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.1ms | Allocations: 5299)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 12:18:59 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3779)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 7876)
+Completed 200 OK in 57ms (Views: 20.9ms | ActiveRecord: 0.7ms | Allocations: 16315)
+
+
+Started GET "/projects" for ::1 at 2025-05-22 12:34:35 +0200
+Processing by ProjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (2.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1192)
+  Rendered layout layouts/application.html.erb (Duration: 58.1ms | Allocations: 5403)
+Completed 200 OK in 61ms (Views: 56.2ms | ActiveRecord: 3.7ms | Allocations: 5671)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 12:34:36 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1165)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 5332)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.4ms | Allocations: 6028)
+
+
+Started GET "/projects" for ::1 at 2025-05-22 12:34:37 +0200
+Processing by ProjectsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/projects/index.html.erb:6
+  Rendered projects/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 5040)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.1ms | Allocations: 5304)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 12:34:43 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1134)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 5231)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 0.3ms | Allocations: 5904)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 12:51:17 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3484)
+  Rendered layout layouts/application.html.erb (Duration: 43.9ms | Allocations: 28227)
+Completed 200 OK in 68ms (Views: 45.6ms | ActiveRecord: 2.5ms | Allocations: 40893)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 12:51:17 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 12:51:48 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3495)
+  Rendered layout layouts/application.html.erb (Duration: 75.7ms | Allocations: 28111)
+Completed 200 OK in 113ms (Views: 77.9ms | ActiveRecord: 5.4ms | Allocations: 41859)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 12:51:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/projects/1/sections/1/tasks" for ::1 at 2025-05-22 12:52:06 +0200
+Processing by TasksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"title"=>"Gym day 1"}, "commit"=>"ADD", "project_id"=>"1", "section_id"=>"1"}
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:12:in `create'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 3423)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 12:52:06 +0200
+Processing by ProjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1509)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 5703)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.2ms | Allocations: 6416)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 13:15:34 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.9ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  Rendered projects/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1556)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1651)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.9ms | Allocations: 14355)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="flex flex-col">
+  <h1 class="text-4xl font-bold text-gray-400 mb-2 flex justify-center"><%= @project.title %></h1>
+  <p class="flex justify-center"><%= @project.description %></p>
+</div>
+
+<div class="mb-5">
+  <ul>
+    <% @sections.each do |section| %>
+        <li class="flex items-center justify-between gap-2 py-2 border-b border-gray-300">
+          <div class="flex w-full flex-col">
+
+            <h3 class="text-2xl"><%= section.title %></h3>
+
+            <% section.tasks.each do |task| %>
+              <li class="...">
+                <%= form_with model: [@project, section, task], local: true, class: "flex-grow" do |f| %>
+                  <%= f.text_field :title,
+                        placeholder: "Add a task",
+                        autocomplete: "off",
+                        class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+                  <%= f.submit "ADD" %>
+                  <% end %>
+                <% end %>
+
+                <div class="flex items-center justify-center">
+                  <%= button_to [@project, section, task],
+                        method: :delete,
+                        class: "text-red-300 invisible m-3",
+                        data: { trash_icon_target: "icon" } do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
+                </div>
+              </li>
+            <% end %>
+
+            <%= form_with model: [@project, section, @task], local: true do |f| %>
+              <%= f.text_field :title,
+                    placeholder: "Add a Section",
+                    autocomplete: "off",
+                    class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+              <%= f.submit "ADD" %>
+            <% end %>
+
+          </div>
+        </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <%= form_with model: [@project, @section], local: true do |f| %>
+    <%= f.text_field :title,
+          placeholder: "Add a Section",
+          autocomplete: "off",
+          class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+    <%= f.submit "ADD" %>
+  <% end %>
+</div>
+<div>
+  <%= form_with model: @task, local: true do |f| %>
+    <%= f.text_field :title,
+          placeholder: "Add a task",
+          autocomplete: "off",
+          class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+    <%= f.text_field :description,
+          placeholder: "Add a description",
+          autocomplete: "off",
+          class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+    <%= f.submit "ADD" %>
+  <% end %>
+</div>
+
+
+<footer class="fixed bottom-0 left-0 w-full py-4 z-50">
+  <div class="flex justify-center">
+    <%= link_to "BACK", projects_path, class:"bg-gray-200 px-4 py-2 rounded" %>
+  </div>
+</footer>
+
+):
+1:    <div class="flex flex-col">
+2:      <h1 class="text-4xl font-bold text-gray-400 mb-2 flex justify-center"><%= @project.title %></h1>
+3:      <p class="flex justify-center"><%= @project.description %></p>
+4:    </div>
+5:    
+6:    <div class="mb-5">
+7:      <ul>
+8:        <% @sections.each do |section| %>
+9:            <li class="flex items-center justify-between gap-2 py-2 border-b border-gray-300">
+10:              <div class="flex w-full flex-col">
+11:    
+12:                <h3 class="text-2xl"><%= section.title %></h3>
+13:    
+14:                <% section.tasks.each do |task| %>
+15:                  <li class="...">
+16:                    <%= form_with model: [@project, section, task], local: true, class: "flex-grow" do |f| %>
+17:                      <%= f.text_field :title,
+18:                            placeholder: "Add a task",
+19:                            autocomplete: "off",
+20:                            class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+21:                      <%= f.submit "ADD" %>
+22:                      <% end %>
+23:                    <% end %>
+24:    
+25:                    <div class="flex items-center justify-center">
+26:                      <%= button_to [@project, section, task],
+27:                            method: :delete,
+28:                            class: "text-red-300 invisible m-3",
+29:                            data: { trash_icon_target: "icon" } do %>
+30:                        <i class="fa-solid fa-trash"></i>
+31:                      <% end %>
+32:                    </div>
+33:                  </li>
+34:                <% end %>
+35:    
+36:                <%= form_with model: [@project, section, @task], local: true do |f| %>
+37:                  <%= f.text_field :title,
+38:                        placeholder: "Add a Section",
+39:                        autocomplete: "off",
+40:                        class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+41:                  <%= f.submit "ADD" %>
+42:                <% end %>
+43:    
+44:              </div>
+45:            </li>
+46:        <% end %>
+47:      </ul>
+48:    </div>
+49:    
+50:    <div>
+51:      <%= form_with model: [@project, @section], local: true do |f| %>
+52:        <%= f.text_field :title,
+53:              placeholder: "Add a Section",
+54:              autocomplete: "off",
+55:              class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+56:        <%= f.submit "ADD" %>
+57:      <% end %>
+58:    </div>
+59:    <div>
+60:      <%= form_with model: @task, local: true do |f| %>
+61:        <%= f.text_field :title,
+62:              placeholder: "Add a task",
+63:              autocomplete: "off",
+64:              class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+65:        <%= f.text_field :description,
+66:              placeholder: "Add a description",
+67:              autocomplete: "off",
+68:              class: "w-full whitespace-normal break-words focus:outline-none focus:border-b border-gray-400 text-gray-500" %>
+69:        <%= f.submit "ADD" %>
+70:      <% end %>
+71:    </div>
+72:    
+73:    
+74:    <footer class="fixed bottom-0 left-0 w-full py-4 z-50">
+75:      <div class="flex justify-center">
+76:        <%= link_to "BACK", projects_path, class:"bg-gray-200 px-4 py-2 rounded" %>
+77:      </div>
+78:    </footer>
+  
+app/views/projects/show.html.erb:81: syntax error, unexpected `end'
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:15:36 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:17:55 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 1]]
+  ↳ app/views/projects/show.html.erb:14
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:14
+  Rendered projects/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5974)
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | Allocations: 30631)
+Completed 200 OK in 87ms (Views: 58.8ms | ActiveRecord: 4.3ms | Allocations: 44373)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:17:55 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:18:53 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 1]]
+  ↳ app/views/projects/show.html.erb:14
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:14
+  Rendered projects/show.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2483)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 6689)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.5ms | Allocations: 7354)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:18:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:19:54 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 1]]
+  ↳ app/views/projects/show.html.erb:14
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:14
+  Rendered projects/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5974)
+  Rendered layout layouts/application.html.erb (Duration: 41.1ms | Allocations: 30494)
+Completed 200 OK in 70ms (Views: 42.9ms | ActiveRecord: 4.6ms | Allocations: 44239)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:19:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:20:14 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 1]]
+  ↳ app/views/projects/show.html.erb:14
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:14
+  Rendered projects/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 5978)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 30626)
+Completed 200 OK in 69ms (Views: 41.2ms | ActiveRecord: 5.3ms | Allocations: 44429)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:20:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:20:53 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.4ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 1]]
+  ↳ app/views/projects/show.html.erb:14
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" = ?[0m  [["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:14
+  Rendered projects/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 5968)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 30617)
+Completed 200 OK in 99ms (Views: 55.8ms | ActiveRecord: 16.6ms | Allocations: 44362)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:20:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:28:13 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 30.2ms | Allocations: 7181)
+  Rendered layout layouts/application.html.erb (Duration: 100.5ms | Allocations: 31914)
+Completed 200 OK in 138ms (Views: 105.5ms | ActiveRecord: 2.9ms | Allocations: 45054)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:28:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:37:43 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (2.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 7253)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 7341)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 3.9ms | Allocations: 18318)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil):
+    78: 
+    79: 
+    80: <div>
+    81:   <%= form_with model: [@project, @section], local: true do |f| %>
+    82:     <%= f.text_field :title,
+    83:           placeholder: "Add a Section",
+    84:           autocomplete: "off",
+  
+app/views/projects/show.html.erb:81
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:37:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:38:55 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 12.1ms | Allocations: 7194)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 7282)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 5.0ms | Allocations: 19340)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `section' for an instance of #<Class:0x000000012dc1af10>):
+    78: 
+    79: 
+    80: <div>
+    81:   <%= form_with model: [@project, section], local: true do |f| %>
+    82:     <%= f.text_field :title,
+    83:           placeholder: "Add a Section",
+    84:           autocomplete: "off",
+  
+app/views/projects/show.html.erb:81
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:38:56 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:39:49 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 12.1ms | Allocations: 7222)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 7310)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 4.5ms | Allocations: 19366)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil):
+    78: 
+    79: 
+    80: <div>
+    81:   <%= form_with model: [@project, @section], local: true do |f| %>
+    82:     <%= f.text_field :title,
+    83:           placeholder: "Add a Section",
+    84:           autocomplete: "off",
+  
+app/views/projects/show.html.erb:81
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:39:49 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:41:58 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4377)
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 30214)
+Completed 200 OK in 88ms (Views: 52.9ms | ActiveRecord: 5.0ms | Allocations: 44411)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:41:58 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/projects/1" for ::1 at 2025-05-22 13:42:38 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4234)
+  Rendered layout layouts/application.html.erb (Duration: 48.2ms | Allocations: 28883)
+Completed 200 OK in 83ms (Views: 50.7ms | ActiveRecord: 4.8ms | Allocations: 43058)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:42:38 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/projects/1/sections/1/tasks" for ::1 at 2025-05-22 13:42:46 +0200
+Processing by TasksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"title"=>"Gym day 1", "status"=>"pending"}, "commit"=>"ADD", "project_id"=>"1", "section_id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:12:in `create'
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[36mTask Create (2.2ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "project_id", "section_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Gym day 1"], ["description", nil], ["status", "pending"], ["due_date", nil], ["project_id", nil], ["section_id", 1], ["created_at", "2025-05-22 11:42:46.351495"], ["updated_at", "2025-05-22 11:42:46.351495"]]
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 15ms (ActiveRecord: 3.4ms | Allocations: 5346)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 13:42:46 +0200
+Processing by ProjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 2661)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 6868)
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 0.5ms | Allocations: 7680)
+
+
+Started POST "/projects/1/sections/1/tasks" for ::1 at 2025-05-22 13:42:54 +0200
+Processing by TasksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"title"=>"Gym day 2", "status"=>"pending"}, "commit"=>"ADD", "project_id"=>"1", "section_id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:12:in `create'
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[36mTask Create (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "project_id", "section_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Gym day 2"], ["description", nil], ["status", "pending"], ["due_date", nil], ["project_id", nil], ["section_id", 1], ["created_at", "2025-05-22 11:42:54.412851"], ["updated_at", "2025-05-22 11:42:54.412851"]]
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms | Allocations: 2808)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 13:42:54 +0200
+Processing by ProjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3038)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 7138)
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 0.4ms | Allocations: 7906)
+
+
+Started PATCH "/projects/1/sections/1/tasks/15" for ::1 at 2025-05-22 13:43:01 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"done", "title"=>"Gym day 1", "description"=>""}, "project_id"=>"1", "section_id"=>"1", "id"=>"15"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:32:in `update'
+  [1m[36mTask Update (1.5ms)[0m  [1m[33mUPDATE "tasks" SET "description" = ?, "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", ""], ["status", "done"], ["updated_at", "2025-05-22 11:43:01.510765"], ["id", 15]]
+  ↳ app/controllers/tasks_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:32:in `update'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms | Allocations: 3142)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 13:43:01 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 3054)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 7151)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.5ms | Allocations: 7916)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:43:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started PATCH "/projects/1/sections/1/tasks/15" for ::1 at 2025-05-22 13:43:04 +0200
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"status"=>"pending", "title"=>"Gym day 1", "description"=>""}, "project_id"=>"1", "section_id"=>"1", "id"=>"15"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:32:in `update'
+  [1m[36mTask Update (1.0ms)[0m  [1m[33mUPDATE "tasks" SET "status" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["status", "pending"], ["updated_at", "2025-05-22 11:43:04.783332"], ["id", 15]]
+  ↳ app/controllers/tasks_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:32:in `update'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms | Allocations: 2349)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 13:43:04 +0200
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3059)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 7266)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.6ms | Allocations: 8031)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-05-22 13:43:04 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started DELETE "/projects/1/sections/1/tasks/15" for ::1 at 2025-05-22 13:43:08 +0200
+Processing by TasksController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "project_id"=>"1", "section_id"=>"1", "id"=>"15"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:41:in `destroy'
+  [1m[36mTask Destroy (0.8ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/tasks_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:41:in `destroy'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms | Allocations: 1984)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 13:43:08 +0200
+Processing by ProjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.3ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2565)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 6772)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.7ms | Allocations: 7540)
+
+
+Started DELETE "/projects/1/sections/1/tasks/16" for ::1 at 2025-05-22 13:43:11 +0200
+Processing by TasksController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "project_id"=>"1", "section_id"=>"1", "id"=>"16"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:41:in `destroy'
+  [1m[36mTask Destroy (0.9ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/tasks_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:41:in `destroy'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms | Allocations: 1928)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 13:43:11 +0200
+Processing by ProjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 27.5ms | Allocations: 2109)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 6206)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.4ms | Allocations: 6974)
+
+
+Started POST "/projects/1/sections/2/tasks" for ::1 at 2025-05-22 13:43:29 +0200
+Processing by TasksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"title"=>"Meal prep for 3 days", "status"=>"pending"}, "commit"=>"ADD", "project_id"=>"1", "section_id"=>"2"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:12:in `create'
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[36mTask Create (1.1ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "project_id", "section_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Meal prep for 3 days"], ["description", nil], ["status", "pending"], ["due_date", nil], ["project_id", nil], ["section_id", 2], ["created_at", "2025-05-22 11:43:29.898282"], ["updated_at", "2025-05-22 11:43:29.898282"]]
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tasks_controller.rb:19:in `create'
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 9ms (ActiveRecord: 1.9ms | Allocations: 2782)
+
+
+Started GET "/projects/1" for ::1 at 2025-05-22 13:43:29 +0200
+Processing by ProjectsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."project_id" = ?[0m  [["project_id", 1]]
+  ↳ app/views/projects/show.html.erb:8
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."section_id" IN (?, ?)[0m  [["section_id", 1], ["section_id", 2]]
+  ↳ app/views/projects/show.html.erb:8
+  Rendered projects/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2571)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 6773)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.4ms | Allocations: 7543)
+
+

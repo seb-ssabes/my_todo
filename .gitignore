@@ -24,10 +24,12 @@
 
 # Ignore storage (uploaded files in development and any SQLite databases).
 /storage/*
+/storage/*.sqlite3
 !/storage/.keep
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+/tmp/pids/*
 
 /public/assets
 

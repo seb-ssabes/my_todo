@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @sections = @project.sections
+    @sections = @project.sections.includes(:tasks)
     @section = Section.new
     @task = Task.new
   end

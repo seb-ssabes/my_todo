@@ -8,7 +8,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    if params[:section_id] && params[:project_id]
+      @project = Project.find(params[:project_id])
+      @section = Section.find(params[:section_id])
+      @task = @section.tasks.build(task_params)
+    else
+      @task = Task.new(task_params)
+    end
+
     if @task.save
       redirect_to request.referer, notice: "Task created"
     else
