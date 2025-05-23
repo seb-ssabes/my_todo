@@ -1,6 +1,24 @@
 <div class="flex flex-col">
-  <h1 class="text-4xl font-bold text-gray-400 mb-2 flex justify-center"><%= @project.title %></h1>
-  <p class="flex justify-center"><%= @project.description %></p>
+  <%= form_with model: @project, local: true do |f| %>
+    <div class="">
+
+      <h1 class="text-4xl font-bold text-gray-400 mb-2">
+        <%= f.text_field :title, class: "flex justify-center"  %>
+      </h1>
+
+      <p class="flex justify-center">
+        <%= f.text_field :description, class: ""  %>
+      </p>
+    </div>
+
+    <footer class="fixed bottom-0 left-0 w-full py-4 z-50 mb-24">
+      <div class="flex justify-center">
+        <%= link_to "BACK", projects_path, class:"bg-gray-200 px-4 py-2 rounded" %>
+        <%= f.submit "Save Changes", class:"bg-gray-200 px-4 py-2 rounded ml-2" %>
+      </div>
+    </footer>
+
+  <% end %>
 </div>
 
 <div class="mb-5" data-controller="trash-icon" data-action="click@window->trash-icon#hideAllIcons">
@@ -30,8 +48,8 @@
                 </div>
 
                 <div class="flex flex-col ml-2 w-full"
-                     data-action="click->trash-icon#showIcon"
-                     data-trash-icon-target="task">
+                    data-action="click->trash-icon#showIcon"
+                    data-trash-icon-target="task">
                   <%= f.text_field :title,
                       class: "w-full truncate whitespace-nowrap overflow-hidden focus:outline-none focus:bg-gray-100 border-gray-400 #{"line-through text-gray-500" if task.status == 'done'}",
                       value: task.title,
@@ -82,9 +100,3 @@
     <%= f.submit "ADD" %>
   <% end %>
 </div>
-
-<footer class="fixed bottom-0 left-0 w-full py-4 z-50">
-  <div class="flex justify-center">
-    <%= link_to "BACK", projects_path, class:"bg-gray-200 px-4 py-2 rounded" %>
-  </div>
-</footer>
